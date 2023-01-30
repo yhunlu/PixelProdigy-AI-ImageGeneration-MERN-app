@@ -19,9 +19,14 @@ const CreatePost = () => {
 
   const handleSubmit = () => {};
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  const handleSurpriseMe = () => {};
+  const handleSurpriseMe = () => {
+    const randomPrompt = getRandomPrompt(form.prompt);
+    setForm({ ...form, prompt: randomPrompt });
+  };
 
   return (
     <section className="max-w-7xl mx-auto">
@@ -92,9 +97,9 @@ const CreatePost = () => {
             When you have the desired image created, you can share it with other
             members of the community.
           </p>
-          <button 
+          <button
             type="submit"
-            className='mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-10 py-2.5 text-center'
+            className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-10 py-2.5 text-center"
           >
             {loading ? 'Sharing...' : 'Share with the community'}
           </button>
