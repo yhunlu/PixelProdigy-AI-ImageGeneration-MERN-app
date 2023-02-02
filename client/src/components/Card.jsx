@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-const Card = () => {
-  return (
-    <div>Card</div>
-  )
-}
+import { download } from '../assets';
+import { downloadImage } from '../utils';
 
-export default Card
+const Card = ({ _id, name, prompt, photo }) => {
+  return <div>Card</div>;
+};
+
+export default Card;
